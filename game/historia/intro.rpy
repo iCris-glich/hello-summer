@@ -57,7 +57,7 @@ label intro:
     pause 0.5 
 
     # Intervención del tío
-    show restaurante_interior at shake
+    show restaurante_interior with hpunch
     cho1 "¡Alto ahí!"
     show tio at left with dissolve
     cha1 "Señor Kyon, este tipo intentó entrar y nunca lo habíamos visto."
@@ -72,6 +72,7 @@ label intro:
     show haruka_avergonzada at center with dissolve
     ha "Perdón, no sabía nada..."
     prota "(Esta chica...)"
+    pause 0.5
     tk "Ven conmigo, [nombre]."
     prota "Está bien..."
     hide haruka_avergonzada
@@ -87,25 +88,40 @@ label intro:
     show restaurante_interior at blur with fade 
     show tio with dissolve
     tk "¿Cómo has estado [nombre]? Tu padre en Tokio sigue ocupado como siempre."
+    prota "Como siempre ocupado"
+    tk "Eses cabeza dura siempre con su trabajo"
+    pause 1.0
+    prota "Tio..."
+    tk "Bueno te preguntaras por que te pedi que vinieras"
+    pause 0.5
     tk "Necesito pedirte un favor."
     prota "¿A mí? Si es dinero, estoy en la ruina."
-    tk "No, quiero que te hagas cargo del restaurante."
+    tk "Jajaja que directo pero no"
+    tk "Pues veras quiero que te hagas cargo {w=0.5}{cps=6}del restaurante."
     pause 1.5
     prota "{cps=5} . . ."
     show restaurante_interior at shake
     prota "¡¿Qué?! Tío, el sol de la playa te ha vuelto loco."
-    tk "El restaurante ha pasado de generación en generación. No tengo hijos, y tú eres el pariente más cercano..."
+    tk "No no deja de decir tonterias"
+    tk "Veras restaurante ha pasado de generación en generación al primer hijo. "
+    tk "Pero como sabes no tengo hijos, y tú eres el pariente más cercano para ser el heredero..."
     pause 0.5
     stop music fadeout 1.0
 
     pause 2.0
     play music melancolia fadein 1.0
+    tk "..."
+    tk "Sientes que es muy repentino..."
     tk "Te seré sincero [nombre]... Nunca me casé ni busqué pareja. Siempre estuve enamorado de alguien que se fue de mi vida."
     prota "(La atmósfera cambió de repente.)"
-    tk "Busco un sucesor... y confío en ti. No tomes esto como una orden, tómalo como un regalo."
-    prota ". . ."
+    tk "La solucion más rapida era olvidarla, {w=0.5}pero el corazon es muy delicado"
+    tk "A veces cabeza serena de tu padre es algo que envido y hubiera sido util en aquel entonces"
+    prota "Tio..."
     prota "Pero tengo 18 y volveré a Tokio al final del verano..."
+    prota "No puedo aceptar una peticion tan repentina"
+    tk "Si lo se..."
     tk "Puedes dirigir el restaurante estas vacaciones. Evalúa y decide si quieres quedarte."
+    prota "(El tio Kyon veo que quiere que me quede)"
     call decision_restaurante
 
     return
@@ -134,14 +150,18 @@ label decision_restaurante:
 
 # ---------- Continuación ----------
 label continuacion:
-    tk "Hay que dar la noticia al personal."
+    tk "Debo sentar cabeza y formar una familia"
+    tk "Pero pasando a lo importante, hay que dar la noticia al personal."
     stop music fadeout 1.0
     scene restaurante_exterior_dark at blur with fade
     play music tema_principal fadein 1.0
     show tio with dissolve
-    tk "Todos por favor escuchen. El restaurante ha tenido éxito estos últimos años, muchas gracias."
+    tk "Todos por favor escuchen. El restaurante ha tenido éxito estos últimos años"
+    tk "Gracias a ustedes por tan arduo trabajo"
     "Aplausos."
     tk "También quiero presentarles a mi sobrino [nombre] [apellido]."
+    pause 0.5
+    tk "Se que es repentino pero quiero dejar el restaurante a mano de mi sobrino"
     pause 0.5
     show haruka_sorprendida at giro_pequeño
     ha "¿¡Qué!? Señor Kyon nos dejará..."
@@ -156,6 +176,7 @@ label continuacion:
     tk "Ven [nombre], quiero presentarte a algunas personas del restaurante."
 
     # Sayonji
+    $ afinidad[personajes[0]] += 10
     show rei_traje at left with dissolve
     tk "Esta chica es Sayonji, la recepcionista. Siempre parece relajada, pero mantiene la cabeza fría en situaciones complicadas."
     re "Un gusto [apellido]."
@@ -173,23 +194,31 @@ label continuacion:
     pause 0.5 
 
     # Haruka
+    $ afinidad[personajes[1]] += 10
+    show tio at left with dissolve 
     show haruka_traje_molesta at right with hpunch
     tk "Ya conocías a Tachibana"
     prota "Sí... (Todavía me mira enojada...)"
-    ha "Señor Kyon no puede dejarle el lugar a este tipo. Se ve problemático. Pero si usted lo dejara, entonces que más remedio... Soy Haruka Tachibana, la mesera estrella del restaurante."
+    ha "Señor Kyon no puede dejarle el lugar a este tipo. Se ve problemático. Pero si usted lo dejara, entonces que más remedio..."
+    ha "Soy Haruka Tachibana, la mesera estrella del restaurante."
     prota "Un gusto Tachibana. (Esta chica creo que me dará canas verdes.)"
     hide haruka_traje_molesta
 
     # Ai
+    $ afinidad[personajes[2]] += 10
+    show tio at right with dissolve
     show ai at left 
     ai "¡Oh, hola! Encantada, señor [apellido]. Escuché que tienes mala pinta y pareces un delincuente."
     prota "(Primero una loca gruñona y ahora una habladora... Dios, qué pecado estoy pagando.)"
-    ai "¿Eh? No me respondes, ¿será que te asusté? Tienes una mirada que mata... JAJAJA. Soy Ai Mizuno, encargada de los eventos y posters del restaurante."
+    ai "¿Eh? No me respondes, ¿será que te asusté? "
+    ai "Tienes una mirada que mata... JAJAJA."
+    ai "Soy Ai Mizuno, encargada de los eventos y posters del restaurante."
     prota "Un gusto. (Bueno, es palanchina... puedo acostumbrarme)"
     hide ai 
     stop music fadeout 1.0
 
     # Ayane
+    $ afinidad[personajes[3]] += 15
     show tio at left with dissolve 
     tk "Y la siguiente es Matsumoto"
     show ayane at right with dissolve
@@ -199,7 +228,7 @@ label continuacion:
     ay "Gracias señor Kyon, pero todo se lo debo a usted. Me ha dejado usar mi voz en el restaurante."
     tk "JA JA JA"
     prota "(Bueno, de todas es la segunda más normal después de Sayonji)"
-    ay "Tu [apellido] espero seguir conlaborando contigo en este tipo"
+    ay "Tu [apellido] espero seguir conlaborando contigo en este tiempo que este aquí"
     prota "Ah lo mismo digo"
     ay "*Suelta una leve sonrisa*"
     ay "Paso a retirarme, con permiso"
@@ -209,8 +238,20 @@ label continuacion:
     prota "Ya voy tio"
     prota "(Bueno este verano sera interesante)"
     "Empieza el verano, sol, playa y 4 lindas chicas"
+    hide tio 
+    show haruka with dissolve 
+    pause 0.5
+    hide haruka
+    show rei_traje with dissolve 
+    pause 0.5
+    hide rei_traje
+    show ai with dissolve 
+    pause 0.5
+    hide ai 
+    show ayane with dissolve 
+    pause 1.0
+    hide ayane with dissolve 
     "Que emocion es ser joven"
-    stop music fadeout 1.0
     scene black with fade 
 
     jump planificacion_juego
