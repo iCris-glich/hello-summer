@@ -1,3 +1,6 @@
 define tema_principal = "audio/musica/Love Plus [NDS Music] - Until We Make Memories - Aedithy.mp3"
 define tema_haruka = "audio/musica/Amagami OST[HD] ~ Nanasaki Ai's theme 8 - MariokartSNES.mp3"
+define tema_ayane = "audio/musica/恋するレンズ - hayatokaori.mp3"
+define tema_ai = "audio/musica/Hoshizora no Memoria -Wish upon a Shooting Star - 04 Happy☆Happy SchoolLife - link.mp3"
+define tema_sayonji = "audio/musica/Rewrite Original Soundtrack - Bud - SharoRioni.mp3"
 define melancolia = "audio/musica/Good mood - Hijumi VGM.mp3"

@@ -17,12 +17,17 @@ image haruka_molesta = im.Scale("images/personajes/haruka/haruka_molesta-Photoro
 image haruka_pensando = im.Scale("images/personajes/haruka/haruka_pensandos.png", 800, 950)
 image haruka_sorprendida = im.Scale("images/personajes/haruka/haruka_sorprendida.png", 800, 950)
 image haruka_avergonzada = im.Scale("images/personajes/haruka/haruka_avergonzada-Photoroom.png", 800, 950)
-image haruka_traje_molesta = im.Scale("images/personajes/haruka/haruka_traje_molesta.png", 800, 950)
-
+image haruka_traje_molesta = im.Scale("images/personajes/haruka/haruka_traje_molesta.png", 700, 950)
 
 image rei_traje = im.Scale("images/personajes/rei/rei_traje-Photoroom.png", 800, 950)
 image rei_traje_avergonzada = im.Scale("images/personajes/rei/rei_traje_avergonzada.png", 800, 950)
+
 image tio = im.Scale("images/personajes/Gemini_Generated_Image_r9xnxjr9xnxjr9xn-Photoroom.png", 800, 950)
+
+image ai = im.Scale("images/personajes/ai/ai.png", 800, 950)
+
+image ayane = im.Scale("images/personajes/ayane/ayane_feliz.png", 800, 950)
+
 
 transform mover_a_centro:
     linear 1.0 xalign 0.5 
